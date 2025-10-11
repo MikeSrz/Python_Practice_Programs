@@ -5,27 +5,27 @@
 import random
 
 def throwPairDice(times):
-    list_of_results = [0,0,0,0,0,0,0,0,0,0,0]
+    list_of_results = [0,0,0,0,0,0,0,0,0,0,0,0,0]
     for n in range(0, times):
         dice1 = random.randint(1,6)
         dice2 = random.randint(1,6)
         result = dice1 + dice2
-        list_of_results[result-2] += 1
+        list_of_results[result] += 1
     print (list_of_results)
     return list_of_results
 
 def generateStatistic(distribution):
-    for n in range (0, len(distribution)-1):
-        distribution[n] = (distribution[n]/sum(distribution))*100
-    print (distribution)
+    total = sum(distribution)
+    for n in range (0, len(distribution)):
+        distribution[n] = (distribution[n]/total)*100
     return distribution
 
 def printStatistic (statistic):
     for i in range (0, len(statistic)):
-    graph = ""
+        graph = f"{i}: "
         for j in range (0, round(statistic[i])):
-            graph+="*"
-   print (graph) 
+            graph+="#"
+        print (graph) 
 
 n = int(input("Rango de tirada de dados: "))
 muestreo = throwPairDice(n)
