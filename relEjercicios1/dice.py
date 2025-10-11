@@ -1,6 +1,6 @@
 #Autor: MikeSrz
 #
-#Descripción: Dar 
+#Descripción: Realizar una distribución de probabilidad de los resultados tras lanzar dos dados.
 #Sum de una lista te devuelve el sumatorio de la cadena entera.
 import random
 
