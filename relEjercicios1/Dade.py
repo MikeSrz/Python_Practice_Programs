@@ -1,0 +1,37 @@
+#Autor: MikeSrz
+#
+#Descripción: Dar 
+#Sum de una lista te devuelve el sumatorio de la cadena entera.
+import random
+
+def throwPairDice(times):
+    list_of_results = [0,0,0,0,0,0,0,0,0,0,0]
+    for n in range(0, times):
+        dice1 = random.randint(1,6)
+        dice2 = random.randint(1,6)
+        result = dice1 + dice2
+        list_of_results[result-2] += 1
+    print (list_of_results)
+    return list_of_results
+
+def generateStatistic(distribution):
+    for n in range (0, len(distribution)-1):
+        distribution[n] = (distribution[n]/sum(distribution))*100
+    print (distribution)
+    return distribution
+
+def printStatistic (statistic):
+    for i in range (0, len(statistic)):
+    graph = ""
+        for j in range (0, round(statistic[i])):
+            graph+="*"
+   print (graph) 
+
+n = int(input("Rango de tirada de dados: "))
+muestreo = throwPairDice(n)
+statistic = generateStatistic(muestreo)
+printStatistic(muestreo)
+
+
+
+
