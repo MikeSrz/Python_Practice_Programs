@@ -1,3 +1,7 @@
+#Autor: MikeSrz
+#Fecha: 15/10/2025
+#Descripción: Dibujando figuras 2D usando matrices.
+
 def generateSquare(height, width, fill=True):
     square = []
     for i in range (height):
