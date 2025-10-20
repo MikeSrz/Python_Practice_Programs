@@ -2,47 +2,43 @@
 #Fecha: 15/10/2025
 #Descripción: Dibujando figuras 2D usando matrices.
 
-def generateSquare(height, width, fill=True):
+def createSquare(height, width, fill=True, tabs=0):
     square = []
     for i in range (height):
         #Generando fila
         square.append([])
-        for j in range (width):
+        for j in range (width+tabs):
+            square[i].append(False)
             #Generando columna
-            if i == 0:
-                square[i].append(True)
-                continue
-            if i == (width):
-                square[i].append(True)
+            if i == 0 or i == width:
+                square[i][j] = (j >= tabs)
                 continue
 
             if fill:
-                square[i].append(True)
+                square[i][j] = (j >= tabs)
             else:
                 if j == 0 or j == (width-1):
-                    square[i].append(True)
-                else:
-                    square[i].append(False)
+                    square[i][j] = True
     return square
 
-def generateTriangle(height, fill=True):
+def createTriangle(height, fill=True, tabs=0):
     triangle = []
     width = ((height-1)*2+1)
-    top = int(width/2)
+    top = int(width/2)+tabs
     left = top
     right = top
 
     for i in range (height):
         #Generando Fila
         triangle.append([])
-        for j in range (width):
+        for j in range (width+tabs):
             triangle[i].append(False)
             if i == 0:
                 triangle[i][j] = (j == top)
                 continue
             
             if i == height-1:
-                triangle [i][j] = True
+                triangle [i][j] = (j >= tabs)
                 continue
 
             if fill:
@@ -58,6 +54,39 @@ def generateTriangle(height, fill=True):
     return triangle
                 
 
+def createInvertedTriangle(height, fill=True, tabs=0):
+    triangle = []
+    width = ((height-1)*2+1)
+    top = int(width/2)+tabs
+    left = tabs
+    right = width+tabs-1
+
+    for i in range (height):
+        #Generando Fila
+        triangle.append([])
+        #Generando columnas
+        for j in range (width+tabs):
+            triangle[i].append(False)
+            if i == height-1:
+                triangle[i][j] = (j == top)
+                continue
+            
+            if i == 0:
+                triangle [i][j] = (j >= tabs)
+                continue
+
+            if fill:
+                if left <= j and right >= j:
+                    triangle[i][j] = True
+            else:
+                if left == j or right == j:
+                    triangle[i][j] = True
+        left = left+1
+        right = right-1
+
+    return triangle
+
+
 def printFigure(figure, relleno="*"):
     for i in range(len(figure)):
         for j in range(len(figure[1])):
@@ -68,8 +97,13 @@ def printFigure(figure, relleno="*"):
         print()
 
 
-square = generateSquare(2,2,True)
-triangle = generateTriangle(4, False)
+square = createSquare(2,2,True)
+triangle = createTriangle(3, True,10)
+inverted_triangle = createInvertedTriangle(3,True)
+inverted_triangle1 = createInvertedTriangle(3,True,15)
+
 printFigure(triangle) 
-printFigure(generateTriangle(6))
-printFigure(generateSquare(8,5))
+printFigure(inverted_triangle1,"V")
+printFigure(createTriangle(6))
+printFigure(createSquare(8,5))
+printFigure(inverted_triangle)
