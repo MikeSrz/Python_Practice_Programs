@@ -14,6 +14,7 @@ def flatten_list(elements):
     while (not flat):
         for i in range(0, len(elements)):
             if type(elements[i]) == list:
+                """concatenar 2 listas = aplanar"""
                 flat_lst += elements[i]
 
             else:

@@ -4,15 +4,15 @@
 
 def rev_dict(dct):
     reversed_dct = {}
-    list_of_repeated = []
-    list_of_values = []
     for key, value in dct.items():
-        if value in list_of_values:
-            list_of_repeated.append(value)
-        else:
-            reversed_dct[value] = key
+        if value not in reversed_dct:
+            #Creamos una lista, así podemos añadirle un valor siempre que queramos
+            reversed_dct[value] = []
+        reversed_dct[value].append(key)
+
     return reversed_dct
 
+               
 character_points = {
     "Mario": 1,
     "Link": 2,
@@ -24,3 +24,4 @@ character_points = {
 rev_character_points = rev_dict(character_points)
 print(character_points)
 print(rev_character_points)
+

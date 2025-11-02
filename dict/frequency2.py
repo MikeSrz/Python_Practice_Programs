@@ -19,10 +19,20 @@ def dict_max(dct):
     return max_list
 
 def dict_min(dct):
-    min_list = 
-    min_value in dct.get(1)
+    min_list = []
+    min_value = 0
     for value in dct.values():
-        if value < min_value
+        min_value = value
+        break
+
+    for value in dct.values():
+        if value < min_value:
+            min_value = value
+
+    for key, value in dct.items():
+        if min_value == value:
+            min_list.append(key)
+    return min_list
 
 text = """Did you leave them in the nursery?”
  “I wanted to dress too. Oh, that horrid Africa. What can they see in it?”
@@ -67,6 +77,7 @@ and clawing and then quieting down to feed in silence under the shady trees.
  A shadow flickered over Mr. McClean’s hot face. Many shadows flickered. The
 vultures were dropping down the blazing sky.
  “A cup of tea?” asked Wendy"""
+
 words = text.lower().replace(",","").replace(".","").replace("\"","").replace("?","").replace("!","").replace("“","").replace("”","").split()
 words_frequency = {}
 
@@ -80,6 +91,7 @@ most_used_words = dict_max(words_frequency)
 print(f"las palabra más usada es: {most_used_words} \n")
 
 least_used_words = dict_min(words_frequency)
+print (least_used_words)
 
 
 
