@@ -7,7 +7,7 @@
 from pprint import pprint
 
 def trim_text(txt):
-    return text.lower().replace(",","").replace(".","").replace("\"","").replace("¿","").replace("¡","").replace("?","").replace("!","").replace("“","").replace("”","").replace("á","a").replace("ó","o").replace("é","e").replace("í","i").replace("ú","u").replace("-","").replace("_","").replace("{","").replace("}","").replace("(","").replace(")","").replace("—","").split()
+    return text.lower().replace(",","").replace(".","").replace("\"","").replace("¿","").replace("¡","").replace("?","").replace("!","").replace("“","").replace("”","").replace("á","a").replace("ó","o").replace("é","e").replace("í","i").replace("ú","u").replace("-","").replace("_","").replace("{","").replace("}","").replace("(","").replace(")","").replace("—","").replace("1","").replace("2","").replace("3","").replace("4","").replace("5","").replace("6","").replace("7","").replace("8","").replace("9","").replace("0","").replace("@","").replace("…","").replace(":","").replace(";","").replace("ª","").replace("ñ","").split()
 
 def genchar_frequency(words_list):
     char_frequency = {}
@@ -20,6 +20,15 @@ def freq_to_percentage(counters):
     total = sum(counters.values())
     for k, v in counters.items():
          counters[k]= (v/total)*100
+
+def print_freq_graph(counter):
+    #Me falta crear una Lista o String que tenga los valores en orden alfabético iterarla y en cada iteración imprimir tantas # como valor tenga esa clave.
+   for k, v in counter.items():
+        print(f"Ratio {k}: ", end="")
+        for i in range(0, int(v)*5):
+            print("#", end="")
+        print()
+
 
 text = """"Un cuento no tiene más utilidad que hacernos vivir un momento emocionante. Sin embargo,
 aquellos que son realmente buenos, como es el caso de “El Ratón Pérez tiene problemas”, no se
@@ -370,5 +379,5 @@ words_list = trim_text(text)
 char_frequency = genchar_frequency(words_list)
 freq_to_percentage(char_frequency)
 pprint(char_frequency)
-
+print_freq_graph(char_frequency)
 
