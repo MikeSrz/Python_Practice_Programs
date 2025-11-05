@@ -6,24 +6,32 @@
 
 from pprint import pprint
 
-def trim_text(txt):
-    return text.lower().replace(",","").replace(".","").replace("\"","").replace("¿","").replace("¡","").replace("?","").replace("!","").replace("“","").replace("”","").replace("á","a").replace("ó","o").replace("é","e").replace("í","i").replace("ú","u").replace("-","").replace("_","").replace("{","").replace("}","").replace("(","").replace(")","").replace("—","").replace("1","").replace("2","").replace("3","").replace("4","").replace("5","").replace("6","").replace("7","").replace("8","").replace("9","").replace("0","").replace("@","").replace("…","").replace(":","").replace(";","").replace("ª","").replace("ñ","").split()
+def extract_words(txt):
+    spChars = [",",".","\"","?","¿","!","¡","“","”","-","_","{","}","(",")","@","ª","…",":",";","—","0","1","2","3","4","5","6","7","8","9"]
+    acChars = {"á":"a", "é":"e", "í":"i", "ó":"o", "ú":"u","ü":"u"}
+    txt = txt.strip().lower()
+    for c in spChars:
+        txt = txt.replace(c,"")
+    for k, v in acChars.items():
+        txt = txt.replace(k,v)
+    words = txt.split()
+    return words
 
-def genchar_frequency(words_list):
-    char_frequency = {}
-    for word in words_list:
-       for i in range (len(word)):
-            char_frequency[word[i]] = char_frequency.get(word[i], 0) +1
-    return char_frequency
 
-def freq_to_percentage(counters):
-    total = sum(counters.values())
-    for k, v in counters.items():
-         counters[k]= (v/total)*100
+def gen_frequency(lst):
+    ltr_frequency = {}
+    for elem in lst:
+       for i in range (len(elem)):
+            ltr_frequency[elem[i]] = ltr_frequency.get(elem[i], 0) +1
+    return ltr_frequency
 
-def print_freq_graph(counter):
-    #Me falta crear una Lista o String que tenga los valores en orden alfabético iterarla y en cada iteración imprimir tantas # como valor tenga esa clave.
-   for k, v in counter.items():
+def freq_to_percentage(freq):
+    total = sum(freq.values())
+    for k, v in freq.items():
+         freq[k]= (v/total)*100
+
+def print_freq_graph(freq):
+   for k, v in freq.items():
         print(f"Ratio {k}: ", end="")
         for i in range(0, int(v)*5):
             print("#", end="")
@@ -375,8 +383,8 @@ Cristina Vera Peinado. Representante de los medios de comunicación.
 María Serrano Canovaca. Representante del mundo cultural de Alcalá la Real.
 A todas las personas que han participado con sus obras en el octavo Certamen de Cuentos por la Igualdad que ha organizado éste Ayuntamiento, vinculado al proyecto “Alcalá, Tiempos de Conciliación”."""
 
-words_list = trim_text(text)
-char_frequency = genchar_frequency(words_list)
+words_list = extract_words(text)
+char_frequency = gen_frequency(words_list)
 freq_to_percentage(char_frequency)
 pprint(char_frequency)
 print_freq_graph(char_frequency)
