@@ -31,9 +31,11 @@ def freq_to_percentage(freq):
          freq[k]= (v/total)*100
 
 def print_freq_graph(freq):
+    #Tengo que hallar una proporción que consiga hacer que el más pequeño se represente
+
    for k, v in freq.items():
-        print(f"Ratio {k}: ", end="")
-        for i in range(0, int(v)*5):
+        print(f"Frecuencia {k}: ", end="")
+        for i in range(0, int(v)):
             print("#", end="")
         print()
 
