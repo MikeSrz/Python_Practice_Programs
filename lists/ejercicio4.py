@@ -10,6 +10,3 @@ if elements == reversed_elements:
 else:
     print("No es palíndromo.")
 
-
-
-
