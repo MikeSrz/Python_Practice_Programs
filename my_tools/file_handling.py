@@ -23,7 +23,7 @@ def comprobate_dir(dir_pth):
 
 def main():
 		comprobate_dir(Path("C:\\users\\sasuk\\minijuegos"))	
-
+		
 if __name__ == "__main__":
 	main()
 

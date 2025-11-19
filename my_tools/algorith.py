@@ -46,7 +46,7 @@ def difference(lst_1, lst_2):
 
 def shift_list(elements, n):
     for i in range (0,n):
-        #El último elemento(extraido con un pop) lo insertamos en la posición 0
+        #El último elemento (extraido con un pop) lo insertamos en la posición 0
         elements.insert(0, elements.pop(len(elements)-1))
     return elements
 
@@ -113,6 +113,7 @@ def encrypt_ROT13(src_file, dst_file):
                 character = chr(character)
                 fout.write(character)
 
+#Velocidad: Olog(n)
 def binary_srch(lst, element):
     minor = 0
     mayor = len(lst)-1
@@ -137,6 +138,7 @@ def search_min_index(lst):
         minor = lst[i]
     return minor_index 
 
+#Velocidad: O n^2
 def selection_sort(lst):
     sorted_lst = []
     for i in range (len(lst)):
@@ -144,7 +146,15 @@ def selection_sort(lst):
         sorted_lst.append(lst.pop(minor_index))
     return sorted_lst
 
-
+#Velocidad: O n*log(n)
+def quicksort(lst):
+    if len(lst) < 2:
+        return lst
+    else:
+        pivot = lst[0]
+        minors = [i for i in lst[1:] if i <= pivot]
+        mayors = [i for i in lst[1:] if i > pivot ]
+        return quicksort(minors)+[pivot]+quicksort(mayors) #Jugada Magistral: pivot "arreglado" o sea, pasado a lista.
 
 def main():
     my_list = [1,2,3,4,5,6,7]
@@ -158,8 +168,8 @@ def main():
     print(selection_sort(my_list[:])) #creo que así funcionará sin borrar nada...
     print(my_list)
 
-
-
+    my_list = [2,3,4,5,6,10,7,8]
+    print(quicksort(my_list[:])) 
 
 if __name__ == "__main__":
     main()
