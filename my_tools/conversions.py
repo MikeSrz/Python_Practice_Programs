@@ -30,3 +30,10 @@ def toFarenheit(temp, u):
         case "K":
             return 9/5 * (temp - 273.15) + 32
     
+
+def main():
+    print(toCelsius(285, "F"))
+
+
+if __name__ == "__main__":
+    main()
