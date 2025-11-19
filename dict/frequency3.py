@@ -32,7 +32,6 @@ def freq_to_percentage(freq):
 
 def print_freq_graph(freq):
     #Tengo que hallar una proporción que consiga hacer que el más pequeño se represente
-
    for k, v in freq.items():
         print(f"Frecuencia {k}: ", end="")
         for i in range(0, int(v)):

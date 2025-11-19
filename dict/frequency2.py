@@ -5,7 +5,7 @@
 def dict_counter(dct, key):
     return dct.get(key, 0)+1
 
-def dict_max(dct):
+def freq_max(dct):
     max_list = []
     max_value = 0
     for value in dct.values():
@@ -18,7 +18,7 @@ def dict_max(dct):
 
     return max_list
 
-def dict_min(dct):
+def freq_min(dct):
     min_list = []
     min_value = 0
     for value in dct.values():
@@ -87,10 +87,10 @@ for word in words:
 for word,value in words_frequency.items():
     print(f"{word} = {value} {'vez' if value == 1 else 'veces'}")
 
-most_used_words = dict_max(words_frequency)
+most_used_words = freq_max(words_frequency)
 print(f"las palabra más usada es: {most_used_words} \n")
 
-least_used_words = dict_min(words_frequency)
+least_used_words = freq_min(words_frequency)
 print (least_used_words)
 
 

@@ -1,22 +1,20 @@
 #Autor: Michael
 #
 #Descripción: Dada una lista,crea una nueva lista que contenga los mismos elementos pero sin duplicados.
+def removeRepeated(lst):
+    uniques = []
+    for i in range(0,len(elements)):
+        is_unique = True
+        for j in range(0, len(uniques)):
+            if elements[i] == uniques[j]:
+                is_unique=False
+                break
+        if is_unique:
+            uniques.append(elements[i])
+    return uniques
 
-elements = [3,3,4,5,3,2,10, "hola"]
-uniques = []
+elements = [3,3,2,4,5,3,2,10, "hola"]
 
-for i in range(0,len(elements)):
-    is_unique = True
-    for j in range(0, len(uniques)):
-        if elements[i] == uniques[j]:
-           is_unique=False
-           break
-    if is_unique:
-        uniques.append(elements[i])
+uni = removeRepeated(elements)
 
-
-        
-
-
-
-print(f"La lista sin repetidos es: {uniques}")
+print(f"La lista sin repetidos es: {uni}")

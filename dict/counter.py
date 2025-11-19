@@ -7,7 +7,6 @@ import time
 
 def dict_counter(dct, key):
     dct[key] = dct.get(key, 0)+1
-    return key
 
 smash_winners = {
     "Mario": 2,

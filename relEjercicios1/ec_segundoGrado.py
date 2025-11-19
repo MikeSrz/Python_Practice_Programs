@@ -14,30 +14,31 @@ import math
 #si b^2 es menor que -4ac => CASO B
 
 def calc_2grade_ec(a, b, c):
-
-    if (pow(b, 2)) < ((4) * a * c) and 0 > ((-4)*a*c):
-        #CASO B 
+    # CASO B: discriminante negativo
+    if a != 0 and b**2 - 4*a*c < 0:
         return None, None
 
-    elif c == 0 or a == 0:
-        #CASO C
+    # CASO C: ecuación lineal o c = 0
+    elif a == 0 or c == 0:
         if a == 0:
-            x1 = (-c)/b  
-            x2 = None
+            if b != 0:
+                x1 = -c/b
+                x2 = None
+            else:
+                x1 = None
+                x2 = None  
             return x1, x2
         else: 
-            x1 = {-b/a} 
+            x1 = -b/a
             x2 = 0
             return x1, x2
 
+    # CASO A: ecuación cuadrática
     else:
-        #CASO A: 
-        partial_result = ((-4)*a*c)
-        partial_result = float(math.sqrt(pow(b,2)+partial_result))
-        x1 = (-b + partial_result)/(2*a)
-        x2 = (-b - partial_result)/(2*a)
+        discriminant = math.sqrt(b**2 - 4*a*c)
+        x1 = (-b + discriminant) / (2*a)
+        x2 = (-b - discriminant) / (2*a)
         return x1, x2
-
 try:
     while True:
 

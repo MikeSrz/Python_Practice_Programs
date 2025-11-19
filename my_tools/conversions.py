@@ -29,3 +29,4 @@ def toFarenheit(temp, u):
 
         case "K":
             return 9/5 * (temp - 273.15) + 32
+    

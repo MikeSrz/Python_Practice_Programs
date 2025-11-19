@@ -4,6 +4,7 @@
 
 def shift_list(elements, n):
     for i in range (0,n):
+        #El último elemento(extraido con un pop) lo insertamos en la posición 0
         elements.insert(0, elements.pop(len(elements)-1))
     return elements
     

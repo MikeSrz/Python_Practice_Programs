@@ -10,7 +10,6 @@ try:
     
     #CALCULAR AREA
     area = (radius**2)*3.1455
-
 except ValueError:
     print("Valor introducido incorrecto. \nVuelva a intentarlo")
     print(f"EL área de su círculo es: {area}")

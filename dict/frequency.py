@@ -19,10 +19,17 @@ def dict_max(dct):
     return max_list
 
 def dict_min(dct):
-    min_list = 
-    min_value in dct.get(1)
+    keys = list(dct.values())
+    min_value = keys[0]
+    min_list = []
     for value in dct.values():
-        if value < min_value
+        if value < min_value:
+            min_value = value
+    for key, value in dct.items():
+        if value == min_value:
+            min_list.append(key)
+
+    return min_list
 
 text = """Did you leave them in the nursery?”
  “I wanted to dress too. Oh, that horrid Africa. What can they see in it?”
@@ -80,6 +87,7 @@ most_used_words = dict_max(words_frequency)
 print(f"las palabra más usada es: {most_used_words} \n")
 
 least_used_words = dict_min(words_frequency)
+print(f"La palabra menos usada ha sido {least_used_words}")
 
 
 
