@@ -14,7 +14,7 @@ def text_to_array(txt):
     return lst
 
 
-def json_to_dict(dct, file_path):
+def csv_to_dict(dct, file_path):
     with open(file_path, encoding='utf-8') as text:
         for linea in text:
             linea = linea.strip().lower()
@@ -31,7 +31,7 @@ def update_screen(points, attempts):
 SRC_FILE = "capitalPaises.txt"
 
 countries = {}
-json_to_dict(countries, SRC_FILE)
+csv_to_dict(countries, SRC_FILE)
 #
 #Esto nos ayudará a escoger una llave aleatoria entre las keys.
 #

@@ -1,3 +1,7 @@
+#Autor: MikeSrz
+#
+#Descripción: Módulo de dibujo de gráficos y formas.
+
 import time
 
 def create_square(height, width, fill=True, tabs=0):

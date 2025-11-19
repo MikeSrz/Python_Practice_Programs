@@ -1,3 +1,7 @@
+#Autor: MikeSrz
+#
+#Descripción: Módulo de algoritmos.
+
 def count_ocurrencies(lst, my_element):
     count = 0
     for element in lst:

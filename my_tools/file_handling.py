@@ -1,3 +1,7 @@
+#Autor: MikeSrz
+#
+#Descripción: Módulo de manejo de ficheros; Rutas, lectura y escritura.
+
 from pathlib import Path
 
 def comprobate_dir(dir_pth):
@@ -19,11 +23,20 @@ def comprobate_dir(dir_pth):
 					case _:
 						print("Opción Inválida")
 	else:
-		print("La carpeta existe.")
+		print("La carpeta ya existe.")
+
+def csv_to_dict(dct, file_path):
+    with open(file_path, encoding='utf-8') as text:
+        for linea in text:
+            linea = linea.strip().lower()
+            key = linea.split(",")[0]
+            value = linea.split(",")[1]
+            dct[key] = value
 
 def main():
 		comprobate_dir(Path("C:\\users\\sasuk\\minijuegos"))	
-		
+
+
 if __name__ == "__main__":
 	main()
 

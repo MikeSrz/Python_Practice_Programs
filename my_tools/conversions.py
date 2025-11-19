@@ -1,3 +1,6 @@
+#Autor: MikeSrz
+#
+#Descripción: Módulo de Conversión de unidades.
 
 def toCelsius(temp, u):
     match u:

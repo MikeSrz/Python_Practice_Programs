@@ -1,3 +1,7 @@
+#Autor: MikeSrz
+#
+#Descripción: Módulo de cálculo 
+
 def calculateFactorial(n): 
     if n == 0:
         return 1

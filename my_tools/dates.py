@@ -1,3 +1,7 @@
+#Autor: MikeSrz
+#
+#Descripción: Módulo de manejo de fechas.
+
 from datetime import datetime
 
 def input_date():

@@ -2,3 +2,6 @@
 #
 #Descripción: Analizador de CSV
 
+from pathlib import Path
+
+ 

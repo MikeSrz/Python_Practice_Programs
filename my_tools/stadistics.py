@@ -1,3 +1,7 @@
+#Autor: MikeSrz
+#
+#Descripción: Módulo de estadística, muestreos, análisis de datos.
+
 def dict_counter(dct, key):
     return dct.get(key, 0)+1
 
