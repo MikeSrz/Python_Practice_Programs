@@ -169,8 +169,8 @@ def main():
     print(my_list)  #Sus elementos han desaparecido porque los he ido eliminado al ordenarla
 
     my_list = [2,3,4,5,6,10,7,8]
-    print(selection_sort(my_list[:])) #creo que así funcionará sin borrar nada...
-    print(my_list)
+    print(selection_sort(my_list[:])) #Con el truco de la copia funcionará sin borrar nada...
+    print(my_list) #Funcionó
 
     my_list = [2,3,4,5,6,10,7,8]
     print(quicksort(my_list[:])) 

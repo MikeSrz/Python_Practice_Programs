@@ -35,7 +35,7 @@ def freq_to_percentage(freq):
 
 def freq_min(dct):
     min_list = []
-    #Cogemos un valor aleatorio de los que ya hay
+    #Cogemos un valor de los que ya hay
     min_value = dct.get(list(dct.keys())[0])
     for value in dct.values():
         min_value = value
