@@ -1,4 +1,4 @@
-list_name[:]  #=> Genera una copia 
+#list_name[:]  #=> Genera una copia
 
 #Podemos pasar a una funcion una coppia
-eraseVowels(list_students[:])
+#eraseVowel(list_students[:])

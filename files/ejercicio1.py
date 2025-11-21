@@ -7,7 +7,7 @@ import math as mth
 
 def detectPrime(n):
     if (n % 2 == 0):
-        return False:
+        return False
     for i in range(2, int(mth.sqrt(n)), 1):
         if (n%i == 0):
             return False
