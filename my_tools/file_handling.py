@@ -37,6 +37,7 @@ def csv_to_dict(dct, file_path):
 
 
 def main():
+	"""
 		comprobate_dir(Path("C:\\users\\sasuk\\minijuegos"))	
 		if (os.path.exists("demofile.txt")):
 			os.remove("demofile.txt")
@@ -79,7 +80,19 @@ def main():
 		print(Path(__file__))
 		print(Path(__file__).resolve().parent)
 		print(Path(__file__).resolve().parent / "..")
-		
+		texto = Path("demofile.txt").read_text(encoding="utf-8") #Todo lo mete en un texto
+	"""	
+	base = Path(__file__).parent
+	src_path = base / "biblia.txt"
+	dst_path = base / "modificado.txt"
+	
+	with src_path.open("r", encoding='latin-1') as fout, dst_path.open("w", encoding="latin-1") as fin:
+		for line in fout:
+			mod_line = line.replace("Dios","El Fary")
+			fin.write(mod_line)
+	txt = dst_path.read_text(encoding="latin-1")
+	print(txt)
+
 
 if __name__ == "__main__":
 	main()

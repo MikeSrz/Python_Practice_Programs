@@ -9,16 +9,16 @@ def count_ocurrencies(lst, my_element):
             count+=1
     return count
 
-def removeRepeated(lst):
+def remove_repeated(lst):
     uniques = []
-    for i in range(0,len(elements)):
+    for i in range(0,len(lst)):
         is_unique = True
         for j in range(0, len(uniques)):
-            if elements[i] == uniques[j]:
+            if lst[i] == uniques[j]:
                 is_unique=False
                 break
         if is_unique:
-            uniques.append(elements[i])
+            uniques.append(lst[i])
     return uniques
 
 def reverse_list(lst):
@@ -31,21 +31,21 @@ def reverse_list(lst):
 
 def list_intersection(lst_1, lst_2):
     intersection = []
-    for i in range(0, len(numbers1)):
-        for j in range(0, len(numbers2)):
-            if numbers1[i] == numbers2[j]:
-                intersection.append(numbers1[i])
+    for i in range(0, len(lst_1)):
+        for j in range(0, len(lst_2)):
+            if lst_1[i] == lst_2[j]:
+                intersection.append(lst_1[i])
     return intersection
 
 def difference(lst_1, lst_2):
     difference = []
-    for i in range(0, len(numbers1)):
+    for i in range(0, len(lst_1)):
         equal = False
-        for j in range (0, len(numbers2)):
-            if numbers1[i] == numbers2[j]:
+        for j in range (0, len(lst_2)):
+            if lst_1[i] == lst_2[j]:
                 equal=True
         if not equal:
-            difference.append(numbers1[i])
+            difference.append(lst_1[i])
     return difference
 
 def shift_list(elements, n):
@@ -82,6 +82,15 @@ def flatten_list(elements):
             flat = True
 
     return flat_lst
+
+
+def tr_mtrx(mtrx):
+    tr_mtrx = [] 
+    for i in range(len(mtrx[0])):
+        tr_row = [] 
+        for row in mtrx:
+            tr_row.append(row[i])
+        tr_mtrx.append(tr_row) 
 
 
 def rev_dict(dct):
