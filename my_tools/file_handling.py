@@ -37,6 +37,12 @@ def csv_to_dict(dct, file_path):
 
 
 def main():
+	file_path = Path("C:\\Users\\sasuk\\PycharmProjects\\Super-Smash-Bros\\Super-Smash-Bros-Rand\\moveset_categories.json")
+	modified_text = file_path.read_text(encoding="utf-8").replace("Titulo","Tipo")
+	print(modified_text)
+	with file_path.open("w",encoding="utf-8") as file_writer:
+		file_writer.write(modified_text)
+
 	"""
 		comprobate_dir(Path("C:\\users\\sasuk\\minijuegos"))	
 		if (os.path.exists("demofile.txt")):
@@ -82,7 +88,7 @@ def main():
 		print(Path(__file__).resolve().parent / "..")
 		texto = Path("demofile.txt").read_text(encoding="utf-8") #Todo lo mete en un texto
 	"""	
-	base = Path(__file__).parent
+	"""base = Path(__file__).parent
 	src_path = base / "biblia.txt"
 	dst_path = base / "modificado.txt"
 	
@@ -92,8 +98,7 @@ def main():
 			fin.write(mod_line)
 	txt = dst_path.read_text(encoding="latin-1")
 	print(txt)
-
-
+"""
+	
 if __name__ == "__main__":
 	main()
-
