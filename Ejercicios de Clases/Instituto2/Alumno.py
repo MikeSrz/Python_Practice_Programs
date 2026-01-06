@@ -39,7 +39,7 @@ class Alumno(Persona):
         persona = super().aleatorio()
         grupo = random.choice(list(Grupo))
         notaMedia = random.randint(0, 10)
-        return cls(persona.dni, persona.nombre, persona.fechaNacimiento, grupo, notaMedia)
+        return Alumno(persona.dni, persona.nombre, persona.fechaNacimiento, grupo, notaMedia)
 
     def getGrupo(self):
         return self.grupo

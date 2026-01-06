@@ -11,25 +11,25 @@ class Departamento(Enum):
 
 class Profesor(Persona):
     def __init__(self, dni, nombre, fechaNacimiento, departamento, salarioMensual):
-        super.__init__(dni, nombre, fechaNacimiento)
+        super().__init__(dni, nombre, fechaNacimiento)
         if  salarioMensual > 0:
             self.salarioMensual = salarioMensual
         else:
             raise ValueError(f"El salario no puede ser 0 o negativo")
         try:
-            self.departamento = Departamento(departamento.capitalize())
+            self.departamento = Departamento(departamento)
         except ValueError:
             raise ValueError(f"No se introdujo un departamento posible")
 
     @classmethod
     def aleatorio(cls):
-        super().aleatorio()
+        persona = super().aleatorio()
         departamento = random.choice(list(Departamento))
         salarioMensual = random.randint(1000, 3000)
-        return cls(
-            Persona.dni,
-            Persona.nombre,
-            Persona.fechaNacimiento,
+        return Profesor(
+            persona.dni,
+            persona.nombre,
+            persona.fechaNacimiento,
             departamento,  # Enum
             salarioMensual
         )
@@ -41,5 +41,11 @@ class Profesor(Persona):
         return self.salarioMensual
 
     def __str__(self):
-        return f"{super().__str__()}, Departamento: {self.departamento}, Salario Mensual: {self.salarioMensual}"
+        return f"{super().__str__()}, Departamento: {self.departamento.value}, Salario Mensual: {self.salarioMensual}"
 
+def main():
+    profe = Profesor.aleatorio()
+    print(profe)
+
+if __name__ == "__main__":
+    main()

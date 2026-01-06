@@ -9,4 +9,13 @@ for i in range(20):
 for persona in personas:
     print(persona)
 
-Instituto("IES Raymond", "Avenida Galáctica", 50)
+print("""
+-----------------------------------------------
+Probando Generación de Personal de Instituto
+-----------------------------------------------""")
+
+instituto = Instituto("IES Manolo Manolez", "C/ Eustaquio Habichuela", 100)
+print(instituto)
+for persona in instituto.personal:
+    print(persona)
+
