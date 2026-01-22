@@ -1,17 +1,7 @@
 import mysql.connector
+from config import config
 
-"""
-CONEXION CON BASE DE DATOS, EDITA LOS PARÁMETROS DE CONEXIÓN.
-"""
-def conectar(db_name):
-    config = {
-        'host':'localhost',
-        'port':777,
-        'user':'root',
-        'password':'',
-        'database':'db_name'
-    }
-
+def conectar(config):
     try:
         db = mysql.connector.connect(**config) #    ** sirve para pasar parametros como: host=tikitiki, port=rikiriki...
         if db.is_connected():
@@ -22,5 +12,5 @@ def conectar(db_name):
     except Exception as e:
         print(f"No conectado: {e}")
 if __name__ == "__main__":
-    db = conectar("world")
+    db = conectar(config)
     db.close()

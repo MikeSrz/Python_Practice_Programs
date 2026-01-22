@@ -1,8 +1,9 @@
 import pprint
 import random
 from conectar import conectar
+from config import config
 
-db = conectar("world")
+db = conectar(**config)
 
 def game_loop(list):
     print("""
