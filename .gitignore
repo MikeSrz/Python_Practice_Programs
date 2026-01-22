@@ -1,0 +1,71 @@
+# =========================
+# Entornos virtuales
+# =========================
+venv/
+.venv/
+env/
+ENV/
+virtualenv/
+
+# =========================
+# Caché de Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Archivos de entorno
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Archivos de sistema
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDEs / Editores
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Builds / distribución
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Tests / cobertura
+# =========================
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.tox/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints
+
+# =========================
+# Archivos temporales
+# =========================
+*.tmp
+*.bak
+*.cache
+
