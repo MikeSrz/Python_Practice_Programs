@@ -1,5 +1,7 @@
 """
-FICHERO DE CONFIGURACIÓN, edita los parámetros de conexión.
+###################################
+    FICHERO DE CONFIGURACIÓN
+###################################
 """
 config = {
     'host': 'localhost',
