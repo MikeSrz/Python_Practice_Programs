@@ -1,0 +1,17 @@
+Método	Descripción
+__init__	Inicializa una nueva instancia de una clase
+__str__	Devuelve una string de un objeto, amigable para el usuario
+__repr__	Devuelve una string de un objeto, amigable para el desarrollador
+__len__	Devuelve la longitud de un objeto
+__getitem__	Permite acceder a elementos mediante índices
+__setitem__	Permite asignar valores a elementos mediante índices
+__delitem__	Permite eliminar elementos mediante índices
+__iter__	Devuelve un iterador para el objeto
+__next__	Devuelve el siguiente elemento del iterador
+
+
+Operación,Método Dunder,Acción
+Suma,"__add__(self, other)",Se activa con obj1 + obj2
+Resta,"__sub__(self, other)",Se activa con obj1 - obj2
+Multiplicación,"__mul__(self, other)",Se activa con obj1 * obj2
+División,"__truediv__(self, other)",Se activa con obj1 / obj2
